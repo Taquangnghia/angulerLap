@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -32,18 +33,20 @@ users =[
   }
   // trung gian dữ liệu của file tsvs from
  curee = null;
-  onSubmit(formData: {name: string, age: number,phone:number,email:string}) {
+  onSubmit(userForm:NgForm) {
     // console.log(formData);
     // tìm id lớn nhất đang có để +1
     const newUserIds = this.users 
     .map(users=>users.id) // lấy ra mảng mứi chỉ có id 
     .sort((a:number,b:number)=>b-a);
     const maxId =  newUserIds[0];
-   if(this.curee==null ){
+   if(this.curee==   ){
     this.users.push({
-      ...formData,id:maxId+1
+      ...userForm.value,
+      id:maxId+1
     });
    }else{
+     ///
     this.users.splice(this.curee,1,this.inputValues)
    }
    
