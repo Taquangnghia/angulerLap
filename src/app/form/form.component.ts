@@ -40,7 +40,7 @@ users =[
     .map(users=>users.id) // lấy ra mảng mứi chỉ có id 
     .sort((a:number,b:number)=>b-a);
     const maxId =  newUserIds[0];
-   if(this.curee==   ){
+   if(this.curee==null ){
     this.users.push({
       ...userForm.value,
       id:maxId+1

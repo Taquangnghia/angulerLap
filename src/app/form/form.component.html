@@ -2,7 +2,7 @@
 và sẽ quản lý, lắng nghe thay đổi của form nó đặt vào -->
 <p>{{userForm.valid | json}}</p>
 <p>{{inputValues|json}}</p>
-<form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" >
+<form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)" >
   <div class="form-group">
     <label for="">Tên user</label>
     <input
