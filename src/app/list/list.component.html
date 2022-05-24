@@ -1,0 +1,24 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        
+        <th>teen </th>
+        <th>tuoi </th>
+        <th>email </th>
+        <th>sdt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor ="let item of users;let i=index" >
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td> 
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+        <td>
+          <button (click)="remove(item.id)" >xoa</button>
+           <button (click)="edit(i)">sua sp</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
