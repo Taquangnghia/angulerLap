@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
- 
+
   constructor() { }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class UserComponent implements OnInit {
     email:''
     
   }
+
   dte(event:number){
   
  this.users =  this.users.filter(item=> item.id != event)
@@ -37,5 +39,9 @@ export class UserComponent implements OnInit {
   }
   uploat(event:any){
     this.inputValues ={ ...this.users[event]};
+  }
+  onSubmit(event:NgForm){
+      this.users.push({...this.inputValues})
+  
   }
 }

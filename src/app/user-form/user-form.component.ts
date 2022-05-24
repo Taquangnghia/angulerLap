@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -7,15 +7,18 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-@Input () inputValues:any
+@Input()   inputValues:any
+
+@Output () handladSubmit : EventEmitter<any> = new EventEmitter<any>()
 
   constructor() { }
 
   ngOnInit(): void {
   }
+ 
   
   onSubmit(userForm:NgForm) {
-    
+    this.handladSubmit.emit(userForm)
     // console.log(formData);
     // tìm id lớn nhất đang có để +1
    
