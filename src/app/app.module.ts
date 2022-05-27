@@ -15,6 +15,12 @@ import { ShowValidateComponent } from './components/show-validate/show-validate.
 import { ListComponent } from './list/list.component';
 import { UserComponent } from './user/user.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TestComponent } from './test/test.component';
+import { ClientComponent } from './layouts/client/client.component';
+import { AdminComponent } from './layouts/admin/admin.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,15 +34,23 @@ import { UserFormComponent } from './user-form/user-form.component';
     ShowValidateComponent,
     ListComponent,
     UserComponent,
-    UserFormComponent
+    UserFormComponent,
+    TestComponent,
+    ClientComponent,
+    AdminComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FormsModule // Đưa vào đây để FormComponent bên trên có thể dùng
+    FormsModule, // Đưa vào đây để FormComponent bên trên có thể dùng,
+    RouterModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+   
+  ],
+  bootstrap: [AppComponent],
+  exports: [ RouterModule ]
 })
 export class AppModule { }

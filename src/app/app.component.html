@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div>
     <p>Angular Form</p>
     <app-form></app-form>
@@ -37,7 +37,7 @@
   </div>
 
 <!-- ----------------------- -->
-  <div>
+  <!-- <div>
     Tên SV: <app-name [name]="studentName" ></app-name>
   </div>
   <div>
@@ -47,7 +47,7 @@
 
   <h1>Champions LMHT</h1>
 
-  <div>
+  <div> -->
     <!--
       B1: kiểm tra selector của component con
       B2: đưa component con vào component cha <app-table></app-table>
@@ -59,9 +59,11 @@
       [champions]="champs"
       class="{{showStatus ? 'db' : 'dn'}}"
     ></app-table> -->
-    <app-table
+    <!-- <app-table
       [champions]="champs"
       *ngIf="showStatus"
     ></app-table>
-  </div>
-</div>
+  </div> -->
+
+
+<router-outlet></router-outlet>

@@ -1,19 +1,24 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Routes } from '@angular/router';
+import { ChampComponent } from '../champ/champ.component';
 
 @Component({
   selector: 'app-user-form',
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css']
-})
+})  
 export class UserFormComponent implements OnInit {
 @Input()   inputValues:any
 
 @Output () handladSubmit : EventEmitter<any> = new EventEmitter<any>()
 
-  constructor() { }
+  constructor() { 
+   
+  }
 
   ngOnInit(): void {
+    
   }
  
   
@@ -23,4 +28,5 @@ export class UserFormComponent implements OnInit {
     // tìm id lớn nhất đang có để +1
    
   }
+
 }

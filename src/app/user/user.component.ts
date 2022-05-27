@@ -19,6 +19,13 @@ export class UserComponent implements OnInit {
       age:10,
       email:"",
       phone:100
+    },
+    {
+      id:2,
+      name:"nghia222",
+      age:10,
+      email:"",
+      phone:100
     }
     
   ]
@@ -26,22 +33,35 @@ export class UserComponent implements OnInit {
     id:0,
     name:'',
     age:0,
+     email:'',
     phone:0,
-    email:''
+   
     
   }
 
-  dte(event:number){
+  dte(id:number){
   
- this.users =  this.users.filter(item=> item.id != event)
+ this.users =  this.users.filter(item=> item.id !== id)
     
 
   }
-  uploat(event:any){
-    this.inputValues ={ ...this.users[event]};
+
+  uploat(event:any){  
+    
+    this.inputValues =  { ...this.users[event]};
   }
   onSubmit(event:NgForm){
-      this.users.push({...this.inputValues})
+    const newUserIds = this.users
+    .map(user => user.id) // lấy ra mảng mới chỉ có id
+    .sort((a: number, b: number) => b - a); // sort các id đang có
+  const maxId = newUserIds[0];
+    const newID = this.inputValues.id;
+    this.users.push({
+      ...event.value, // lấy ra object value của form
+      id: maxId + 1
+    });
   
   }
+
+ 
 }

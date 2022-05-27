@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 @Input() users :any;
-@Output () handleDelete : EventEmitter<any> = new EventEmitter<any>();
+@Output () handleDelete : EventEmitter<number> = new EventEmitter<number>();
 @Output () handUploat : EventEmitter<any> = new EventEmitter<any>();
   constructor() { 
    
