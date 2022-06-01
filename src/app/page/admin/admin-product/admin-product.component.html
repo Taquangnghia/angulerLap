@@ -1,0 +1,25 @@
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row"></th>
+        <td>{{product.name}}</td>
+        <td>
+          <button (click)="onRemove(product._id)">Xoa</button>
+
+          <button routerLink="{product._id}}/edit">detia</button>
+        </td>
+        <td></td>
+      </tr>
+     
+     
+    </tbody>
+  </table>
